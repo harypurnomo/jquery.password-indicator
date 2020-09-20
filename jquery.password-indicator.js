@@ -4,15 +4,10 @@ $(function() {
     function PasswordIndicator() {
 
         function passwordContainsLowercaseLetter(value) {
-
-            // console.log((/[a-z]/).test(value));
             return (/[a-z]/).test(value);
         }
 
         function passwordContainsUppercaseLetter(value) {
-            
-            console.log((/[A-Z]/).test(value));
-
             return (/[A-Z]/).test(value);
         }
 
@@ -115,19 +110,19 @@ $(function() {
 
             strengthClassNames: [{
                 name: "very-weak",
-                text: "very weak"
+                text: "Password strength : very weak"
               }, {
                 name: "weak",
-                text: "weak"
+                text: "Password strength : weak"
               }, {
                 name: "mediocre",
-                text: "mediocre"
+                text: "Password strength : mediocre"
               }, {
                 name: "strong",
-                text: "strong"
+                text: "Password strength : strong"
               }, {
                 name: "awesome",
-                text: "Awesome"
+                text: "Password strength : Awesome"
               }]
         },
 
@@ -175,7 +170,7 @@ $(function() {
         $input.on("keyup", refresh);
     }
 
-    $.fn.passwordStrengthIndicator = $.fn.passwordStrength = function(method) {
+    $.fn.PasswordIndicatorIndicator = $.fn.PasswordIndicator = function(method) {
         if (methods[method]) {
             return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
         }
@@ -184,6 +179,6 @@ $(function() {
             return methods.init.apply(this, arguments);
         }
 
-        $.error("Method " +  method + " does not exist on jQuery.passwordStrength");
+        $.error("Method " +  method + " does not exist on jQuery.PasswordIndicator");
     };
 });
